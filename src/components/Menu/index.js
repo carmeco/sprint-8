@@ -4,10 +4,10 @@ const Menu = () => {
     return (
         <ul>
             <li>
-                <Link to="">Home</Link>
+                <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/">Starships</Link>
+                <Link to="/starships">Starships</Link>
             </li>
         </ul>
     );
