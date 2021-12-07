@@ -12,7 +12,7 @@ function App() {
                     <Route exact path="/" element={<Home />} />
                     <Route path="/starships" element={<Starships />} />
                     <Route
-                        path="/starship-details"
+                        path="/starships/:index"
                         element={<StarshipDetails />}
                     />
                 </Routes>

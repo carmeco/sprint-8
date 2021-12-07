@@ -1,13 +1,19 @@
 import Menu from "../Menu";
 import Login from "../Login";
+import { Header, Wrapper } from "./Layout.styles";
+import logo from "../../images/logo.png";
 
 const Layout = ({ children }) => {
     return (
         <div>
-            <h1>Star Wars</h1>
-            <Login />
+            <Header>
+                <img alt="Star Wars" src={logo} width="205px" />
+                <div>
+                    <Login />
+                </div>
+            </Header>
             <Menu />
-            <div>{children}</div>
+            <Wrapper>{children}</Wrapper>
         </div>
     );
 };

@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
+import { List } from "./Menu.styles";
 
 const Menu = () => {
     return (
-        <ul>
+        <List>
             <li>
                 <Link to="/">Home</Link>
             </li>
             <li>
                 <Link to="/starships">Starships</Link>
             </li>
-        </ul>
+        </List>
     );
 };
 
