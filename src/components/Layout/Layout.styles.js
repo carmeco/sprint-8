@@ -1,17 +1,17 @@
 import styled, { css } from "styled-components";
-import image from "../../images/background.jpg";
 
-const background = css`
-    background-color: black;
+const container = css`
     max-width: 1400px;
-    margin: auto;
+    margin: 1rem 0.5rem;
+    @media (min-width: 572px) {
+        margin: auto;
+    }
 `;
 
 export const Header = styled.header`
-    ${background};
-    background-image: url(${image});
-    height: 140px;
+    ${container};
     display: grid;
+    height: 170px;
     grid-template-areas: ". starwars login";
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -28,5 +28,5 @@ export const Header = styled.header`
 `;
 
 export const Wrapper = styled.div`
-    ${background};
+    ${container};
 `;

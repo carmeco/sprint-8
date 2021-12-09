@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import image from "./images/background.jpg";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -18,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     
     body {
         background-color: black;
+        background-image: url(${image});
         color: var(--lightGrey);
         font-family: 'Barlow', sans-serif;
     }
