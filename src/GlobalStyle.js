@@ -35,4 +35,17 @@ export const GlobalStyle = createGlobalStyle`
             color: white;
         }
     }
+
+    button {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    opacity: 0.5;
+    text-transform: uppercase;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+}
 `;

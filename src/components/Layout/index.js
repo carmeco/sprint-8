@@ -1,5 +1,5 @@
 import Menu from "../Menu";
-import Login from "../Login";
+import MenuLogin from "../MenuLogin";
 import { Header, Wrapper } from "./Layout.styles";
 import logo from "../../images/logo.png";
 
@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
             <Header>
                 <img alt="Star Wars" src={logo} width="205px" />
                 <div>
-                    <Login />
+                    <MenuLogin />
                 </div>
             </Header>
             <Menu />

@@ -1,16 +1,4 @@
-import styled, { css } from "styled-components";
-
-const button = css`
-    border: none;
-    border-radius: 5px;
-    background-color: var(--yellow);
-    opacity: 0.5;
-
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-    }
-`;
+import styled from "styled-components";
 
 export const Carousel = styled.div`
     background-color: var(--darkGrey);
@@ -48,13 +36,11 @@ export const Content = styled.div`
     }
 
     button {
-        ${button};
         padding: 0.5rem 1rem;
     }
 `;
 
 export const Button = styled.button`
-    ${button};
     width: 2rem;
     height: 2rem;
     position: absolute;
