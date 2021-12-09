@@ -11,9 +11,19 @@ export const Slide = styled.div`
     height: 100%;
     background-image: ${({ image }) => `url(${image})`};
     background-size: cover;
-    display: flex;
+    display: ${({ state }) => (state ? "flex" : "none")};
     align-items: flex-end;
     padding: 2rem;
+    animation: appear 1s ease-in;
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 `;
 
 export const Content = styled.div`
