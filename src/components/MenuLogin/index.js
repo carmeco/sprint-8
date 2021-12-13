@@ -1,11 +1,18 @@
+//from react
 import { useContext } from "react";
-import { LoginContext } from "../../context/loginContext";
-import { List } from "./MenuLogin.styles";
 import { Link } from "react-router-dom";
 
+//context
+import { LoginContext } from "../../context/loginContext";
+
+//styles
+import { List } from "./MenuLogin.styles";
+
 const MenuLogin = () => {
+    //hooks
     const { isLogged, userLogged, setIsLogged } = useContext(LoginContext);
 
+    //log out
     const handleClick = (event) => {
         event.preventDefault();
         setIsLogged(false);

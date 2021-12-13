@@ -1,13 +1,22 @@
+//from react
 import { useRef } from "react";
+
+//components
 import Layout from "../../components/Layout";
+
+//styles and images
 import { Wrapper, Panel } from "./Singup.styles";
 import yoda from "../../images/yoda.png";
 
 const Signup = () => {
+    //hooks
     const userInput = useRef(null);
     const passwordInput = useRef(null);
+
+    //getting data from local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
+    //form submitting
     const handleSubmit = (event) => {
         event.preventDefault();
         users.push({

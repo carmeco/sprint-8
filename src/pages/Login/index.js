@@ -1,17 +1,22 @@
+//from react
 import { useRef, useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import Layout from "../../components/Layout";
-import { Wrapper, Panel } from "./Login.styles";
-import darth from "../../images/darth.png";
+
+//context
 import { LoginContext } from "../../context/loginContext";
 
+//components
+import Layout from "../../components/Layout";
+
+//styles and images
+import { Wrapper, Panel } from "./Login.styles";
+import darth from "../../images/darth.png";
+
 const Login = () => {
+    //hooks
     const userInput = useRef(null);
     const passwordInput = useRef(null);
     const remember = useRef(null);
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const userSaved = JSON.parse(localStorage.getItem("userSaved"));
 
     const [feedback, setFeedback] = useState("");
 
@@ -24,6 +29,11 @@ const Login = () => {
         }
     }, [userSaved]);
 
+    //getting data from localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const userSaved = JSON.parse(localStorage.getItem("userSaved"));
+
+    //form submitting
     const handleSubmit = (event) => {
         event.preventDefault();
         const user = users.find(

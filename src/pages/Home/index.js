@@ -1,5 +1,10 @@
+//from react
 import { useState, useEffect } from "react";
+
+//components
 import Layout from "../../components/Layout";
+
+//styles, images and icons
 import { Carousel, Slide, Content, Button } from "./Home.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,6 +14,7 @@ import {
 import movies from "../../images/movies";
 
 const Home = () => {
+    //hooks
     const [active, setActive] = useState(0);
 
     useEffect(() => {
@@ -16,6 +22,7 @@ const Home = () => {
         return () => clearInterval(autoNextMovie);
     }, []);
 
+    //functions to change movie
     const prevMovie = () => {
         setActive((prev) => (prev > 0 ? prev - 1 : movies.length - 1));
     };

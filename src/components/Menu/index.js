@@ -1,4 +1,7 @@
+//from react
 import { Link } from "react-router-dom";
+
+//styles
 import { List } from "./Menu.styles";
 
 const Menu = () => {

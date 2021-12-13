@@ -1,11 +1,16 @@
+//from react
 import { useContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { LoginContext } from "./context/loginContext";
+
+//components
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Starships from "./pages/Starships";
 import StarshipDetails from "./pages/StarshipDetails";
+
+//context
+import { LoginContext } from "./context/loginContext";
 
 const Routing = () => {
     const { isLogged } = useContext(LoginContext);

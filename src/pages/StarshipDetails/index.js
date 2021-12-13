@@ -1,16 +1,25 @@
+//from react
 import { useEffect, useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { ShipContext } from "../../context/shipContext";
-import Layout from "../../components/Layout";
 import axios from "axios";
+
+//components
+import Layout from "../../components/Layout";
+
+//context
+import { ShipContext } from "../../context/shipContext";
+
+//styles
 import { Wrapper, Image, Details } from "./StarshipDetails.styles";
 
 const StarshipDetails = () => {
+    //hooks
     const { ship } = useContext(ShipContext);
     const [image, setImage] = useState(null);
     const navigate = useNavigate();
     const { index } = useParams();
 
+    //getting data from API
     useEffect(() => {
         if (!ship) navigate("/starships");
         else {

@@ -1,5 +1,8 @@
+//components
 import Menu from "../Menu";
 import MenuLogin from "../MenuLogin";
+
+//styles and images
 import { Header, Wrapper } from "./Layout.styles";
 import logo from "../../images/logo.png";
 

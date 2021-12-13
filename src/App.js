@@ -1,6 +1,9 @@
+//components
+import Routing from "./Routing";
+
+//context providers
 import { ShipContextProvider } from "./context/shipContext";
 import { LoginContextProvider } from "./context/loginContext";
-import Routing from "./Routing";
 
 function App() {
     return (
