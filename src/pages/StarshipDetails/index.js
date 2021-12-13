@@ -1,7 +1,7 @@
 import { useEffect, useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { ShipContext } from "../context/shipContext";
-import Layout from "../components/Layout";
+import { ShipContext } from "../../context/shipContext";
+import Layout from "../../components/Layout";
 import axios from "axios";
 import { Wrapper, Image, Details } from "./StarshipDetails.styles";
 

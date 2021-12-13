@@ -1,12 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import Layout from "../components/Layout";
+import { useState, useEffect } from "react";
+import Layout from "../../components/Layout";
 import { Carousel, Slide, Content, Button } from "./Home.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faChevronRight,
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import movies from "../images/movies";
+import movies from "../../images/movies";
 
 const Home = () => {
     const [active, setActive] = useState(0);

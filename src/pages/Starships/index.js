@@ -1,9 +1,9 @@
 import { useState, useContext, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ShipContext } from "../context/shipContext";
-import useLoadShips from "../hooks/useLoadShips";
+import { ShipContext } from "../../context/shipContext";
+import useLoadShips from "../../hooks/useLoadShips";
 import { List, Spinner } from "./Starships.styles";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const Starships = () => {
     const [page, setPage] = useState(1);

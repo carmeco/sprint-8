@@ -28,6 +28,15 @@ export const Panel = styled.div`
         margin-bottom: 1.5rem;
     }
 
+    a {
+        color: var(--yellow);
+        text-decoration: underline;
+        opacity: 0.6;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
     ul {
         display: grid;
         row-gap: 1rem;
