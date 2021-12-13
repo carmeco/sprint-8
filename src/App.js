@@ -1,27 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ShipContextProvider } from "./context/shipContext";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Starships from "./pages/Starships";
-import StarshipDetails from "./pages/StarshipDetails";
+import { LoginContextProvider } from "./context/loginContext";
+import Routing from "./Routing";
 
 function App() {
     return (
-        <ShipContextProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/starships" element={<Starships />} />
-                    <Route
-                        path="/starships/:index"
-                        element={<StarshipDetails />}
-                    />
-                </Routes>
-            </BrowserRouter>
-        </ShipContextProvider>
+        <LoginContextProvider>
+            <ShipContextProvider>
+                <Routing />
+            </ShipContextProvider>
+        </LoginContextProvider>
     );
 }
 

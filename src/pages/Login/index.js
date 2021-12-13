@@ -1,15 +1,21 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout";
 import { Wrapper, Panel } from "./Login.styles";
 import darth from "../../images/darth.png";
+import { LoginContext } from "../../context/loginContext";
 
 const Login = () => {
     const userInput = useRef(null);
     const passwordInput = useRef(null);
     const remember = useRef(null);
+
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const userSaved = JSON.parse(localStorage.getItem("userSaved"));
+
+    const [feedback, setFeedback] = useState("");
+
+    const { setIsLogged, setUserLogged } = useContext(LoginContext);
 
     useEffect(() => {
         if (userSaved) {
@@ -24,13 +30,14 @@ const Login = () => {
             (user) => user.userName === userInput.current.value
         );
         if (!user) {
-            console.log("Usuari no registrat");
+            setFeedback("Usuari no registrat");
         } else if (user.password === passwordInput.current.value) {
-            console.log("Benvingut");
+            setIsLogged(true);
+            setUserLogged(user);
             if (remember.current.value)
                 localStorage.setItem("userSaved", JSON.stringify(user));
         } else {
-            console.log("Contrasenya incorrecta");
+            setFeedback("Contrasenya incorrecta");
         }
     };
 
@@ -77,6 +84,7 @@ const Login = () => {
                             <li>
                                 <button type="submit">Log in</button>
                             </li>
+                            <li>{feedback}</li>
                         </ul>
                     </form>
                 </Panel>

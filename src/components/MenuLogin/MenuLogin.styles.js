@@ -7,5 +7,10 @@ export const List = styled.ul`
         padding: 0.5rem;
         text-transform: uppercase;
         color: var(--midGrey);
+
+        &:first-child,
+        &:last-child {
+            color: var(--lightGrey);
+        }
     }
 `;
