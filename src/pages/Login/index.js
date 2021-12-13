@@ -27,7 +27,7 @@ const Login = () => {
             userInput.current.value = userSaved.userName;
             passwordInput.current.value = userSaved.password;
         }
-    }, [userSaved]);
+    }, []);
 
     //getting data from localStorage
     const users = JSON.parse(localStorage.getItem("users")) || [];
