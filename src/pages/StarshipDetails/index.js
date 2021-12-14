@@ -14,9 +14,13 @@ import { ShipContext } from "../../context/shipContext";
 import { Wrapper, Image, Details } from "./StarshipDetails.styles";
 
 const StarshipDetails = () => {
-    //hooks
+    //shipContext
     const { ship } = useContext(ShipContext);
+
+    //image state
     const [image, setImage] = useState(null);
+
+    //useNavigate and useParams
     const navigate = useNavigate();
     const { index } = useParams();
 

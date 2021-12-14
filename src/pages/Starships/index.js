@@ -13,10 +13,14 @@ import useLoadShips from "../../hooks/useLoadShips";
 import { List, Spinner } from "./Starships.styles";
 
 const Starships = () => {
-    //hooks
+    //states for loading ships
     const [page, setPage] = useState(1);
     const { ships, loading } = useLoadShips(page);
 
+    //shipContext
+    const { setShip } = useContext(ShipContext);
+
+    //getting data on scroll
     const observer = useRef();
     const lastShip = useCallback(
         (node) => {
@@ -31,8 +35,6 @@ const Starships = () => {
         },
         [loading, page]
     );
-
-    const { setShip } = useContext(ShipContext);
 
     return (
         <Layout>

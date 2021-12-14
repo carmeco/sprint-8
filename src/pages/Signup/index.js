@@ -10,12 +10,14 @@ import { Wrapper, Panel } from "./Singup.styles";
 import yoda from "../../images/yoda.png";
 
 const Signup = () => {
-    //hooks
+    //refs to the DOM
     const userInput = useRef(null);
     const passwordInput = useRef(null);
+
+    //state for submit
     const [submit, setSubmit] = useState(false);
 
-    //getting data from local storage
+    //getting users from local storage
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     //form submitting

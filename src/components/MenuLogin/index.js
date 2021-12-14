@@ -9,10 +9,10 @@ import { LoginContext } from "../../context/loginContext";
 import { List } from "./MenuLogin.styles";
 
 const MenuLogin = () => {
-    //hooks
+    //loginContext
     const { isLogged, userLogged, setIsLogged } = useContext(LoginContext);
 
-    //log out
+    //handling log out button
     const handleClick = (event) => {
         event.preventDefault();
         setIsLogged(false);

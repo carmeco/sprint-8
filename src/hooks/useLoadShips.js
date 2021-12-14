@@ -13,7 +13,8 @@ export default function useLoadShips(page) {
                 .then((res) => {
                     setShips((prev) => [...prev, ...res.data.results]);
                     setLoading(false);
-                });
+                })
+                .catch(() => setShips((prev) => prev));
         }
     }, [page]);
 

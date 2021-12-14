@@ -35,7 +35,11 @@ const Home = () => {
         <Layout>
             <Carousel>
                 {movies.map((movie, index) => (
-                    <Slide image={movie.image} state={index === active}>
+                    <Slide
+                        key={index}
+                        image={movie.image}
+                        state={index === active}
+                    >
                         <Content>
                             <h2>{movie.title}</h2>
                             <p>{movie.description}</p>

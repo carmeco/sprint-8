@@ -13,15 +13,16 @@ import { Wrapper, Panel } from "./Login.styles";
 import darth from "../../images/darth.png";
 
 const Login = () => {
-    //hooks
+    //refs to DOM elements
     const userInput = useRef(null);
     const passwordInput = useRef(null);
     const remember = useRef(null);
 
-    const [feedback, setFeedback] = useState("");
+    //getting data from localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const userSaved = JSON.parse(localStorage.getItem("userSaved")) || "";
 
-    const { isLogged, setIsLogged, setUserLogged } = useContext(LoginContext);
-
+    //rendering data from saved user
     useEffect(() => {
         if (userSaved) {
             userInput.current.value = userSaved.userName;
@@ -29,9 +30,12 @@ const Login = () => {
         }
     }, []);
 
-    //getting data from localStorage
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const userSaved = JSON.parse(localStorage.getItem("userSaved"));
+    //context for logged users
+    const { isLogged, setIsLogged, userLogged, setUserLogged } =
+        useContext(LoginContext);
+
+    //state for feedback on submitting
+    const [feedback, setFeedback] = useState("");
 
     //form submitting
     const handleSubmit = (event) => {
@@ -44,7 +48,7 @@ const Login = () => {
         } else if (user.password === passwordInput.current.value) {
             setIsLogged(true);
             setUserLogged(user);
-            if (remember.current.value)
+            if (remember.current.checked)
                 localStorage.setItem("userSaved", JSON.stringify(user));
         } else {
             setFeedback("Contrasenya incorrecta");
@@ -57,7 +61,7 @@ const Login = () => {
                 <img src={darth} alt="Darth Vader" />
                 {isLogged ? (
                     <Panel>
-                        <h2>Hello {userInput.current.value}!</h2>
+                        <h2>Hello {userLogged.userName}!</h2>
                         <p>
                             You have successfully logged in. Now you can visit
                             all the content in the website.

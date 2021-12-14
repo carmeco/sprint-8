@@ -2,9 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import image from "./images/background.jpg";
 
 export const GlobalStyle = createGlobalStyle`
-    :root {
-        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;400&display=swap');
-        
+    :root {        
         //theme colors
         --lightGrey: #999999;
         --midGrey: #343434;
