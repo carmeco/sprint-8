@@ -73,7 +73,7 @@ const Login = () => {
                         <form onSubmit={handleSubmit}>
                             <ul>
                                 <li>
-                                    <label for="user">User</label>
+                                    <label htmlFor="user">User</label>
                                     <br />
                                     <input
                                         id="user"
@@ -83,7 +83,7 @@ const Login = () => {
                                     ></input>
                                 </li>
                                 <li>
-                                    <label for="password">Password</label>
+                                    <label htmlFor="password">Password</label>
                                     <br />
                                     <input
                                         id="password"
@@ -98,7 +98,9 @@ const Login = () => {
                                         type="checkbox"
                                         ref={remember}
                                     ></input>
-                                    <label for="remember">Remember me</label>
+                                    <label htmlFor="remember">
+                                        Remember me
+                                    </label>
                                 </li>
                                 <li>
                                     <button type="submit">Log in</button>

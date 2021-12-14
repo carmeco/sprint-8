@@ -52,17 +52,17 @@ const Signup = () => {
                         <form onSubmit={handleSubmit}>
                             <ul>
                                 <li>
-                                    <label for="name">Name</label>
+                                    <label htmlFor="name">Name</label>
                                     <br />
                                     <input id="name" type="text"></input>
                                 </li>
                                 <li>
-                                    <label for="email">E-mail</label>
+                                    <label htmlFor="email">E-mail</label>
                                     <br />
                                     <input id="email" type="email"></input>
                                 </li>
                                 <li>
-                                    <label for="user">User</label>
+                                    <label htmlFor="user">User</label>
                                     <br />
                                     <input
                                         id="user"
@@ -72,7 +72,7 @@ const Signup = () => {
                                     ></input>
                                 </li>
                                 <li>
-                                    <label for="password">Password</label>
+                                    <label htmlFor="password">Password</label>
                                     <br />
                                     <input
                                         id="password"
