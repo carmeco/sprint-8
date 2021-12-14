@@ -72,6 +72,10 @@ const StarshipDetails = () => {
                                 <p>Crew</p>
                                 <p>{ship.crew}</p>
                             </li>
+                            <li>
+                                <p>Crew</p>
+                                <p>{ship.pilots}</p>
+                            </li>
                         </ul>
                     </Details>
                 </Wrapper>

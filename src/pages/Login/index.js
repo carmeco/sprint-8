@@ -20,7 +20,7 @@ const Login = () => {
 
     const [feedback, setFeedback] = useState("");
 
-    const { setIsLogged, setUserLogged } = useContext(LoginContext);
+    const { isLogged, setIsLogged, setUserLogged } = useContext(LoginContext);
 
     useEffect(() => {
         if (userSaved) {
@@ -55,49 +55,59 @@ const Login = () => {
         <Layout>
             <Wrapper>
                 <img src={darth} alt="Darth Vader" />
-                <Panel>
-                    <h2>Hello again!</h2>
-                    <p>
-                        If it's your first time in the website, please{" "}
-                        <Link to="/signup"> sign up</Link>.
-                    </p>
-                    <form onSubmit={handleSubmit}>
-                        <ul>
-                            <li>
-                                <label for="user">User</label>
-                                <br />
-                                <input
-                                    id="user"
-                                    type="text"
-                                    ref={userInput}
-                                    required
-                                ></input>
-                            </li>
-                            <li>
-                                <label for="password">Password</label>
-                                <br />
-                                <input
-                                    id="password"
-                                    type="password"
-                                    ref={passwordInput}
-                                    required
-                                ></input>
-                            </li>
-                            <li>
-                                <input
-                                    id="remember"
-                                    type="checkbox"
-                                    ref={remember}
-                                ></input>
-                                <label for="remember">Remember me</label>
-                            </li>
-                            <li>
-                                <button type="submit">Log in</button>
-                            </li>
-                            <li>{feedback}</li>
-                        </ul>
-                    </form>
-                </Panel>
+                {isLogged ? (
+                    <Panel>
+                        <h2>Hello {userInput.current.value}!</h2>
+                        <p>
+                            You have successfully logged in. Now you can visit
+                            all the content in the website.
+                        </p>
+                    </Panel>
+                ) : (
+                    <Panel>
+                        <h2>Hello again!</h2>
+                        <p>
+                            If it's your first time in the website, please{" "}
+                            <Link to="/signup"> sign up</Link>.
+                        </p>
+                        <form onSubmit={handleSubmit}>
+                            <ul>
+                                <li>
+                                    <label for="user">User</label>
+                                    <br />
+                                    <input
+                                        id="user"
+                                        type="text"
+                                        ref={userInput}
+                                        required
+                                    ></input>
+                                </li>
+                                <li>
+                                    <label for="password">Password</label>
+                                    <br />
+                                    <input
+                                        id="password"
+                                        type="password"
+                                        ref={passwordInput}
+                                        required
+                                    ></input>
+                                </li>
+                                <li>
+                                    <input
+                                        id="remember"
+                                        type="checkbox"
+                                        ref={remember}
+                                    ></input>
+                                    <label for="remember">Remember me</label>
+                                </li>
+                                <li>
+                                    <button type="submit">Log in</button>
+                                </li>
+                                <li>{feedback}</li>
+                            </ul>
+                        </form>
+                    </Panel>
+                )}
             </Wrapper>
         </Layout>
     );
