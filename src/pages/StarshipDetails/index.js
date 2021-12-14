@@ -77,8 +77,11 @@ const StarshipDetails = () => {
                             </ul>
                         </Details>
                     </Wrapper>
-                    {ship.pilots && (
-                        <Cards array={ship.pilots} title="Pilots" />
+                    {ship.pilots.length > 0 && (
+                        <Cards array={ship.pilots} title="pilots" />
+                    )}
+                    {ship.films.length > 0 && (
+                        <Cards array={ship.films} title="films" />
                     )}
                 </>
             )}

@@ -10,7 +10,7 @@ const Cards = ({ array, title }) => {
             <h3>{title}</h3>
             <Grid>
                 {array.map((item, index) => (
-                    <Card key={index} url={item} />
+                    <Card key={index} url={item} type={title} />
                 ))}
             </Grid>
         </Wrapper>
