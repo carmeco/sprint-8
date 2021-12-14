@@ -5,6 +5,7 @@ import axios from "axios";
 
 //components
 import Layout from "../../components/Layout";
+import Cards from "../../components/Cards";
 
 //context
 import { ShipContext } from "../../context/shipContext";
@@ -43,42 +44,43 @@ const StarshipDetails = () => {
     return (
         <Layout>
             {ship && (
-                <Wrapper>
-                    {image && <Image alt={ship.name} src={image} />}
-                    <Details>
-                        <h2>{ship.name}</h2>
-                        <ul>
-                            <li>
-                                <p>Model</p>
-                                <p>{ship.model}</p>
-                            </li>
-                            <li>
-                                <p>Cost in credits</p>
-                                <p>{ship.cost_in_credits}</p>
-                            </li>
-                            <li>
-                                <p>Atmospheric Speed</p>
-                                <p>{ship.max_atmosphering_speed}</p>
-                            </li>
-                            <li>
-                                <p>Manufacturer</p>
-                                <p>{ship.manufacturer}</p>
-                            </li>
-                            <li>
-                                <p>Length</p>
-                                <p>{ship.length}m</p>
-                            </li>
-                            <li>
-                                <p>Crew</p>
-                                <p>{ship.crew}</p>
-                            </li>
-                            <li>
-                                <p>Crew</p>
-                                <p>{ship.pilots}</p>
-                            </li>
-                        </ul>
-                    </Details>
-                </Wrapper>
+                <>
+                    <Wrapper>
+                        {image && <Image alt={ship.name} src={image} />}
+                        <Details>
+                            <h2>{ship.name}</h2>
+                            <ul>
+                                <li>
+                                    <p>Model</p>
+                                    <p>{ship.model}</p>
+                                </li>
+                                <li>
+                                    <p>Cost in credits</p>
+                                    <p>{ship.cost_in_credits}</p>
+                                </li>
+                                <li>
+                                    <p>Atmospheric Speed</p>
+                                    <p>{ship.max_atmosphering_speed}</p>
+                                </li>
+                                <li>
+                                    <p>Manufacturer</p>
+                                    <p>{ship.manufacturer}</p>
+                                </li>
+                                <li>
+                                    <p>Length</p>
+                                    <p>{ship.length}m</p>
+                                </li>
+                                <li>
+                                    <p>Crew</p>
+                                    <p>{ship.crew}</p>
+                                </li>
+                            </ul>
+                        </Details>
+                    </Wrapper>
+                    {ship.pilots && (
+                        <Cards array={ship.pilots} title="Pilots" />
+                    )}
+                </>
             )}
         </Layout>
     );

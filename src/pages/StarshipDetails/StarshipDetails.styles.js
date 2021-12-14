@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     background-color: var(--darkGrey);
     max-width: 650px;
-    margin: auto;
+    margin: 2rem auto;
     @media (min-width: 992px) {
         display: flex;
         max-width: none;
