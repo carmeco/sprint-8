@@ -18,7 +18,7 @@ const Card = ({ url, type }) => {
                     setCard({
                         title: res.data.name,
                         image: `https://starwars-visualguide.com/assets/img/characters/${url.slice(
-                            29,
+                            34,
                             -1
                         )}.jpg`,
                     });
@@ -26,7 +26,7 @@ const Card = ({ url, type }) => {
                     setCard({
                         title: res.data.title,
                         image: `https://starwars-visualguide.com/assets/img/films/${url.slice(
-                            28,
+                            33,
                             -1
                         )}.jpg`,
                     });

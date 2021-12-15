@@ -43,7 +43,7 @@ const Starships = () => {
                     <Link
                         key={index}
                         ref={ships.length === index + 1 ? lastShip : null}
-                        to={`${ship.url.slice(21)}`}
+                        to={`${ship.url.slice(26)}`}
                         onClick={() => setShip(ship)}
                     >
                         <p>{ship.name}</p>
@@ -54,6 +54,7 @@ const Starships = () => {
                     <Spinner
                         alt="spinner"
                         src="https://static-mh.content.disney.io/starwars/assets/shared/loader_empire-985b0940808a.png"
+                        role="status"
                     />
                 )}
             </List>

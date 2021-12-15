@@ -9,7 +9,7 @@ export default function useLoadShips(page) {
         if (page < 5) {
             setLoading(true);
             axios
-                .get(`https://swapi.dev/api/starships/?page=${page}`)
+                .get(`https://swapi.py4e.com/api/starships/?page=${page}`)
                 .then((res) => {
                     setShips((prev) => [...prev, ...res.data.results]);
                     setLoading(false);

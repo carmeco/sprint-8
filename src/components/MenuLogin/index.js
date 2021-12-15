@@ -31,9 +31,7 @@ const MenuLogin = () => {
     ) : (
         <List>
             <li>
-                <Link to="/login" role="button">
-                    Log In
-                </Link>
+                <Link to="/login">Log In</Link>
             </li>
             <li>/ /</li>
             <li>
