@@ -1,5 +1,5 @@
 //from react
-import { useState, useContext, useCallback, useRef } from "react";
+import { useState, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 
 //components
@@ -8,6 +8,7 @@ import Layout from "../../components/Layout";
 //custom hooks and context
 import { ShipContext } from "../../context/shipContext";
 import useLoadShips from "../../hooks/useLoadShips";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 //styless
 import { List, Spinner } from "./Starships.styles";
@@ -22,19 +23,7 @@ const Starships = () => {
 
     //getting data on scroll
     const observer = useRef();
-    const lastShip = useCallback(
-        (node) => {
-            if (loading) return;
-            if (observer.current) observer.current.disconnect();
-            observer.current = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting && page < 5) {
-                    setPage((prev) => prev + 1);
-                }
-            });
-            if (node) observer.current.observe(node);
-        },
-        [loading, page]
-    );
+    const lastShip = useIntersectionObserver(observer, loading, page, setPage);
 
     return (
         <Layout>

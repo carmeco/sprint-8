@@ -16,6 +16,7 @@ import { Wrapper, Image, Details } from "./StarshipDetails.styles";
 const StarshipDetails = () => {
     //shipContext
     const { ship } = useContext(ShipContext);
+    console.log(ship);
 
     //image state
     const [image, setImage] = useState(null);
