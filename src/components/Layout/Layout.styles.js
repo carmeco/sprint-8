@@ -10,20 +10,24 @@ const container = css`
 
 export const Header = styled.header`
     ${container};
-    display: grid;
-    height: 170px;
-    grid-template-areas: ". starwars login";
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
+    text-align: center;
 
-    img {
-        grid-area: starwars;
-        justify-self: center;
-    }
+    @media (min-width: 576px) {
+        height: 170px;
+        display: grid;
+        grid-template-areas: ". starwars login";
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
 
-    div {
-        grid-area: login;
-        justify-self: end;
+        img {
+            grid-area: starwars;
+            justify-self: center;
+        }
+
+        div {
+            grid-area: login;
+            justify-self: end;
+        }
     }
 `;
 

@@ -3,14 +3,28 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     background-color: var(--darkGrey);
     border-radius: 5px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 3rem;
     max-width: 1000px;
     margin: 2rem auto;
+
     img {
-        width: 100%;
-        padding: 2rem 2rem 0 2rem;
+        display: none;
+    }
+
+    @media (min-width: 576px) {
+        display: grid;
+        grid-gap: 3rem;
+        grid-template-columns: 1fr 1fr;
+
+        img {
+            display: block;
+            width: 100%;
+            padding: 2rem 2rem 0 2rem;
+            align-self: flex-end;
+        }
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 2fr;
     }
 `;
 
