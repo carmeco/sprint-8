@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { act } from "@testing-library/react";
 
 export default function useLoadShips(page) {
     const [ships, setShips] = useState([]);
@@ -11,8 +12,10 @@ export default function useLoadShips(page) {
             axios
                 .get(`https://swapi.py4e.com/api/starships/?page=${page}`)
                 .then((res) => {
-                    setShips((prev) => [...prev, ...res.data.results]);
-                    setLoading(false);
+                    act(() => {
+                        setShips((prev) => [...prev, ...res.data.results]);
+                        setLoading(false);
+                    });
                 })
                 .catch(() => setShips((prev) => prev));
         }

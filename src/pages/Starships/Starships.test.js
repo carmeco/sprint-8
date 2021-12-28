@@ -50,7 +50,7 @@ jest.mock("../../hooks/useIntersectionObserver");
 
 //tests
 test("Rendering spinner", () => {
-    axios.get.mockResolvedValueOnce(res);
+    axios.get.mockResolvedValueOnce(res);    
     useIntersectionObserver.mockReturnValue(() => null);
     render(
         <BrowserRouter>
