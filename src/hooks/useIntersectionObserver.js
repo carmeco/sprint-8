@@ -17,7 +17,7 @@ export default function useIntersectionObserver(
             });
             if (node) observer.current.observe(node);
         },
-        [loading, page]
+        [loading, page, observer, setPage]
     );
     return lastShip;
 }
